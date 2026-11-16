@@ -21,7 +21,7 @@ export const personal = {
     downloadName: 'Jamel-Rose-Resume.pdf',
   },
 
-  headline: ['I Build Software.', 'I Understand the Systems It Runs On.'],
+  headline: ["Hi, I'm Jamel.", 'I Build Software and Solve Technical Problems.'],
 
   heroIntro: [
     "I'm Jamel Rose, a Computer Engineering graduate and former U.S. Air Force F-16 maintainer. My background spans aircraft maintenance, industrial technology, software development, and computer infrastructure.",
