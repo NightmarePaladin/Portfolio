@@ -24,7 +24,7 @@ export default function Projects() {
       <SectionHeading
         id="projects-title"
         label="03 / Projects"
-        title="Selected work"
+        title="My projects"
         intro="Open any project for the problem it addresses, what I contributed, and the decisions behind it."
       />
 
