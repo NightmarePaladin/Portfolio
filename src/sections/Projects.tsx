@@ -6,16 +6,17 @@ import ProjectDialog from '../components/ProjectDialog'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 
+const rank = (p: Project) => (p.primary ? 2 : p.featured ? 1 : 0)
+
 export default function Projects() {
   const [filter, setFilter] = useState<(typeof projectFilters)[number]>('All')
   const [selected, setSelected] = useState<Project | null>(null)
 
   const visible = useMemo(() => {
     const list = filter === 'All' ? projects : projects.filter((p) => p.category === filter)
-    return [...list].sort((a, b) => Number(b.featured) - Number(a.featured))
+    // Stable sort: primary first, then featured, otherwise original order.
+    return list.map((p, i) => ({ p, i })).sort((a, b) => rank(b.p) - rank(a.p) || a.i - b.i).map((x) => x.p)
   }, [filter])
-
-  const hasPlaceholders = projects.some((p) => p.placeholder)
 
   return (
     <section id="projects" aria-labelledby="projects-title" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
@@ -23,15 +24,8 @@ export default function Projects() {
         id="projects-title"
         label="03 / Projects"
         title="Selected work"
-        intro="Case studies covering the problem, my contribution, and what I learned."
+        intro="Software and systems projects, each with the problem, my contribution, and the decisions behind it."
       />
-
-      {hasPlaceholders && (
-        <p className="mb-8 rounded-lg border border-dashed border-line bg-surface p-4 text-sm text-muted">
-          Projects marked <strong className="text-fg">Placeholder</strong> are templates awaiting real details and are not
-          completed work. Edit <code className="font-mono text-accent">src/data/projects.ts</code> to replace them.
-        </p>
-      )}
 
       <div role="group" aria-label="Filter projects by category" className="mb-8 flex flex-wrap gap-2">
         {projectFilters.map((f) => (
@@ -55,19 +49,18 @@ export default function Projects() {
         Showing {visible.length} {visible.length === 1 ? 'project' : 'projects'}
       </p>
 
-      {visible.length === 0 ? (
-        <p className="card p-8 text-center text-muted">No projects in this category yet.</p>
-      ) : (
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((p, i) => (
-            <li key={p.id}>
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {visible.map((p, i) => {
+          const wide = p.primary && visible.length > 1
+          return (
+            <li key={p.id} className={wide ? 'sm:col-span-2 lg:col-span-3' : ''}>
               <Reveal delay={(i % 3) * 0.05} className="h-full">
-                <ProjectCard project={p} onOpen={() => setSelected(p)} />
+                <ProjectCard project={p} large={wide} onOpen={() => setSelected(p)} />
               </Reveal>
             </li>
-          ))}
-        </ul>
-      )}
+          )
+        })}
+      </ul>
 
       <ProjectDialog project={selected} onClose={() => setSelected(null)} />
     </section>

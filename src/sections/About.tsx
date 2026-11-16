@@ -1,4 +1,4 @@
-import { Check, GraduationCap, Plane, Headset } from 'lucide-react'
+import { GraduationCap, Plane, Headset } from 'lucide-react'
 import { personal } from '../data/personal'
 import { education } from '../data/education'
 import Reveal from '../components/Reveal'
@@ -14,7 +14,7 @@ const timeline = [
   {
     icon: GraduationCap,
     title: education.school,
-    text: `B.S. Computer Engineering, ${education.date}.`,
+    text: `B.S. Computer Engineering, conferred ${education.date}.`,
   },
 ]
 
@@ -23,17 +23,12 @@ export default function About() {
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
       <SectionHeading id="about-title" label="01 / About" title="From the flight line to computer engineering" />
       <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-        <Reveal className="space-y-5 text-lg leading-relaxed text-muted">
-          {personal.about.map((p) => (
-            <p key={p}>{p}</p>
+        <Reveal className="max-w-prose space-y-6 text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
+          {personal.about.map((p, i) => (
+            <p key={p} className={i === 0 ? 'text-lg text-fg sm:text-xl sm:leading-9' : undefined}>
+              {p}
+            </p>
           ))}
-          <ul className="grid gap-x-6 gap-y-2 pt-3 text-base sm:grid-cols-2">
-            {personal.strengths.map((s) => (
-              <li key={s} className="flex items-center gap-2 text-fg">
-                <Check size={16} className="shrink-0 text-accent" aria-hidden /> {s}
-              </li>
-            ))}
-          </ul>
         </Reveal>
         <Reveal delay={0.1}>
           <ol className="relative space-y-6 border-l border-line pl-8" aria-label="Career timeline">

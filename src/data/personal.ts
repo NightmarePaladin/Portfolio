@@ -21,24 +21,18 @@ export const personal = {
     downloadName: 'Jamel-Rose-Resume.pdf',
   },
 
-  heroIntro:
-    'Computer Engineering graduate and U.S. Air Force veteran who bridges software development, computer systems, and hands-on technical engineering, with nine years of finding the failure in a live system, fixing it, and verifying the fix.',
+  headline: ['I Build Software.', 'I Understand the Systems It Runs On.'],
+
+  heroIntro: [
+    "I'm Jamel Rose, a Computer Engineering graduate and former U.S. Air Force F-16 maintainer. My background spans aircraft maintenance, industrial technology, software development, and computer infrastructure.",
+    "I've spent my career understanding complex systems, figuring out why they fail, and finding ways to make them work better. Today, I bring that same approach to building software and solving engineering problems.",
+  ],
 
   about: [
-    'I served in the U.S. Air Force from 2013 to 2017, first as an F-16 tactical aircraft maintainer in South Korea, troubleshooting electrical, communication, navigation, hydraulic, and fuel systems, then as a support technician and supervisor leading a team of five. In that work, troubleshooting is a discipline: isolate the fault, verify the fix, document it, and own the result.',
-    'After the Air Force I spent years finding failures in live systems: Geek Squad repair and IT support, production work at an industrial gas plant, and field service on concrete 3D printers, where I diagnosed and repaired equipment on-site and trained about 25 customers a week.',
-    'Computer engineering is where those habits meet software. I am finishing my B.S. at Manhattan University, building full-stack TypeScript and Python applications on PostgreSQL, running a virtualized homelab with self-hosted LLMs, and using AI coding agents daily while reviewing, testing, and owning every change they make.',
-    'I am looking for software engineering, systems engineering, embedded software, and AI engineering roles.',
-  ],
-  strengths: [
-    'Analytical problem-solving',
-    'Engineering fundamentals',
-    'Systematic troubleshooting',
-    'Technical ownership',
-    'Teamwork',
-    'Customer-facing communication',
-    'Adaptability',
-    'Continuous learning',
+    'My engineering background started in the U.S. Air Force, where I maintained F-16 aircraft and developed a hands-on approach to troubleshooting complex systems. That experience shaped how I think about technology: understanding how individual components work together is just as important as understanding the components themselves.',
+    'After the military, I continued working in technical roles ranging from computer repair and customer support to industrial 3D printing technology. Along the way, I realized I wanted to do more than troubleshoot and maintain technology. I wanted to build it.',
+    'That led me to earn my Bachelor of Science in Computer Engineering from Manhattan University. Today, my interests span software development, computer systems, and infrastructure, with a particular appreciation for projects that bring hardware and software together.',
+    'I enjoy solving challenging problems, learning new technologies, and working with people who genuinely enjoy what they do.',
   ],
 }
 

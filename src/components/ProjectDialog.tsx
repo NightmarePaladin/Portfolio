@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { ExternalLink, X } from 'lucide-react'
-import type { Project } from '../data/types'
+import { isTodo, type Project } from '../data/types'
 import { GithubIcon } from './BrandIcons'
 import { ProjectPreview } from './ProjectCard'
 
@@ -21,7 +21,11 @@ export default function ProjectDialog({ project, onClose }: { project: Project |
     }
   }, [project])
 
-  const section = (title: string, body: string | string[]) => (
+  const section = (title: string, raw: string | string[]) => {
+    // Hide unfilled TODO placeholders from visitors.
+    const body = Array.isArray(raw) ? raw.filter((b) => !isTodo(b)) : raw
+    if (Array.isArray(body) ? body.length === 0 : isTodo(body)) return null
+    return (
     <section className="mt-6">
       <h3 className="mb-2 font-mono text-xs uppercase tracking-wider text-accent">{title}</h3>
       {Array.isArray(body) ? (
@@ -34,7 +38,8 @@ export default function ProjectDialog({ project, onClose }: { project: Project |
         <p className="leading-relaxed text-muted">{body}</p>
       )}
     </section>
-  )
+    )
+  }
 
   return (
     <dialog
@@ -46,7 +51,7 @@ export default function ProjectDialog({ project, onClose }: { project: Project |
     >
       {project && (
         <div>
-          <ProjectPreview project={project} className="h-44 w-full" />
+          <ProjectPreview project={project} className="max-h-72" />
           <button
             type="button"
             onClick={onClose}
@@ -58,11 +63,6 @@ export default function ProjectDialog({ project, onClose }: { project: Project |
           <div className="p-6 sm:p-8">
             <div className="mb-3 flex flex-wrap gap-2">
               <span className="chip">{project.category}</span>
-              {project.placeholder && (
-                <span className="rounded-full border border-dashed border-muted px-2.5 py-0.5 text-xs text-muted">
-                  Placeholder: replace with real details
-                </span>
-              )}
             </div>
             <h2 id="project-dialog-title" className="text-2xl font-semibold tracking-tight sm:text-3xl">
               {project.title}
@@ -82,6 +82,7 @@ export default function ProjectDialog({ project, onClose }: { project: Project |
               )}
             </div>
 
+            {project.why && section('Why it matters', project.why)}
             {section('The problem', project.caseStudy.problem)}
             {section('The solution', project.caseStudy.solution)}
             {section('My contribution', project.caseStudy.contribution)}

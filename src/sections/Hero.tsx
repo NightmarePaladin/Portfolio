@@ -6,10 +6,10 @@ import ResumeButton from '../components/ResumeButton'
 import SocialLinks from '../components/SocialLinks'
 
 const layers = [
-  { icon: Cpu, name: 'Hardware', desc: 'Circuits, aircraft systems, diagnostics' },
+  { icon: Cpu, name: 'Hardware', desc: 'Aircraft systems, PLCs, diagnostics' },
   { icon: Server, name: 'Systems', desc: 'Linux, virtualization, networking' },
   { icon: Code2, name: 'Software', desc: 'C++, Python, JavaScript, SQL' },
-  { icon: Layers, name: 'Solutions', desc: 'Reliable, documented, maintainable' },
+  { icon: Layers, name: 'Solutions', desc: 'Tested, documented, maintainable' },
 ]
 
 export default function Hero() {
@@ -25,11 +25,15 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="chip mb-6 !text-accent">{personal.shortTitle}</p>
-          <h1 id="hero-title" className="text-4xl font-semibold leading-[1.1] tracking-tight sm:text-6xl">
-            Hi, I&apos;m {personal.name}.
-            <span className="text-gradient mt-1 block">Software and systems engineer.</span>
+          <h1 id="hero-title" className="text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+            {personal.headline[0]}
+            <span className="text-gradient mt-1 block">{personal.headline[1]}</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{personal.heroIntro}</p>
+          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-muted sm:text-lg">
+            {personal.heroIntro.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="btn btn-primary">
               View Projects <ArrowRight size={16} aria-hidden />
