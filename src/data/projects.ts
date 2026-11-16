@@ -7,8 +7,15 @@ import type { Project, ProjectCategory } from './types'
  * with "TODO" is a placeholder for details only you can supply; the site hides
  * it until you replace it with real text.
  *
- * Screenshots: save a real image as public/images/projects/<id>.webp and set
- * `screenshot: 'images/projects/<id>.webp'` on the project.
+ * Screenshots: save real images in public/images/projects/<project-id>/ and list them
+ * in an `images` array, for example:
+ *
+ *   images: [
+ *     { src: 'images/projects/schematichub/viewer.webp', alt: 'Schematic viewer with pinned comments' },
+ *     { src: 'images/projects/schematichub/architecture.webp', alt: 'Architecture diagram', fit: 'contain' },
+ *   ],
+ *
+ * Do not add an entry until the file exists. See public/images/projects/README.md.
  */
 export const projects: Project[] = [
   {
@@ -22,7 +29,9 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'React', 'Supabase', 'PostgreSQL', 'PDF.js', 'Tailwind', 'Vitest', 'Playwright'],
     githubUrl: 'https://github.com/NightmarePaladin/Schematics-Viewer',
     liveUrl: 'https://schematics-viewer.vercel.app',
-    why: 'It connects two parts of my background: reading drawings and technical documentation as a maintainer, and building the software that organizes them.',
+    // The repository README maps the project to a boot camp requirements list.
+    // You can add your own reason for choosing this idea to the sentence below.
+    motivation: 'Built as a boot camp project; the repository README maps it to the course requirements.',
     caseStudy: {
       problem:
         'Maintenance documentation about a machine (schematics, notes, issues, repair history) is easier to use when it is attached to the drawing it refers to and shared only with the right people.',
@@ -55,7 +64,7 @@ export const projects: Project[] = [
     technologies: ['TypeScript', 'Next.js', 'React', 'PostgreSQL', 'Supabase', 'Vitest', 'Python'],
     githubUrl: 'https://github.com/NightmarePaladin/LLM-Manager',
     liveUrl: 'https://llm-manager-eosin.vercel.app',
-    why: 'It applies my homelab and infrastructure interests to a full-stack application, with the access rules tested rather than assumed.',
+    motivation: 'Built as a class project, combining my homelab with a full-stack application.',
     caseStudy: {
       problem: 'Keeping an inventory of homelab servers and seeing which ones are online, offline, or unknown.',
       solution:
@@ -85,7 +94,7 @@ export const projects: Project[] = [
     category: 'Systems',
     featured: true,
     technologies: ['PLC', 'HMI', 'Modbus TCP', 'PWM'],
-    why: 'Hardware and software working together as one control system, with results measured on a physical prototype.',
+    motivation: 'Senior design project for my Computer Engineering degree, built with a team of five.',
     caseStudy: {
       problem: 'Improve data center energy efficiency by regulating liquid cooling from measured temperatures.',
       solution:
@@ -107,6 +116,7 @@ export const projects: Project[] = [
     category: 'AI',
     featured: false,
     technologies: ['Proxmox', 'Linux', 'Docker', 'LXC', 'Ollama'],
+    motivation: 'I self-host language models to understand how they behave.',
     caseStudy: {
       problem: 'Understand how language models behave by running them myself on infrastructure I control.',
       solution: 'A virtualized homelab that serves local LLM inference over the network.',
@@ -128,6 +138,7 @@ export const projects: Project[] = [
     technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostgreSQL'],
     githubUrl: 'https://github.com/NightmarePaladin/fit-log',
     liveUrl: 'https://fit-log-beryl-mu.vercel.app',
+    motivation: 'TODO: why you built FitLog (for example, your own training and poor gym signal).',
     caseStudy: {
       problem: 'Logging workouts in a gym with unreliable signal and seeing real progress from one week to the next.',
       solution:
@@ -154,6 +165,7 @@ export const projects: Project[] = [
     featured: false,
     technologies: ['Next.js', 'React', 'PostgreSQL', 'Supabase'],
     liveUrl: 'https://finance-machine-five.vercel.app',
+    motivation: 'TODO: why you built the expense tracker.',
     caseStudy: {
       problem: 'Seeing where money goes each month.',
       solution: 'Private accounts for tracking spending, plus read-only sharing for invited viewers.',

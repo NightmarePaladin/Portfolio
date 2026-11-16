@@ -1,6 +1,6 @@
 export interface SkillCategory {
   title: string
-  icon: 'code' | 'server' | 'git' | 'network' | 'brain'
+  icon: 'code' | 'layers' | 'server' | 'network' | 'tools' | 'brain'
   description: string
   skills: string[]
 }
@@ -9,20 +9,20 @@ export const skillCategories: SkillCategory[] = [
   {
     title: 'Programming',
     icon: 'code',
-    description: 'Languages used across coursework and personal projects.',
-    skills: ['TypeScript', 'Python', 'JavaScript', 'SQL', 'C++', 'C'],
+    description: 'Languages, plus the computer science fundamentals behind them.',
+    skills: ['TypeScript', 'Python', 'JavaScript', 'SQL', 'C++', 'C', 'Data structures', 'Algorithms', 'Object-oriented design'],
   },
   {
-    title: 'Web & Data',
-    icon: 'code',
-    description: 'Full-stack applications backed by relational databases.',
+    title: 'Frameworks & Data',
+    icon: 'layers',
+    description: 'Full-stack web development on relational databases.',
     skills: ['React', 'Next.js', 'Node.js', 'REST APIs', 'PostgreSQL', 'Supabase', 'MySQL'],
   },
   {
     title: 'Systems & Infrastructure',
     icon: 'server',
     description: 'Operating systems and platforms I build and run things on.',
-    skills: ['Linux', 'Ubuntu', 'Windows', 'Docker', 'Proxmox', 'LXC', 'Virtualization', 'Vercel'],
+    skills: ['Linux', 'Ubuntu', 'Windows', 'Docker', 'Proxmox', 'LXC', 'Virtualization', 'Systems troubleshooting'],
   },
   {
     title: 'Networking & IT',
@@ -31,21 +31,15 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Networking', 'Wireshark', 'Nmap', 'Active Directory', 'Microsoft 365'],
   },
   {
-    title: 'Testing & Tools',
-    icon: 'git',
-    description: 'Verification and collaboration tooling.',
-    skills: ['Vitest', 'ESLint', 'Git', 'GitHub'],
+    title: 'Development & Testing Tools',
+    icon: 'tools',
+    description: 'Version control, testing, deployment, and AI-assisted coding.',
+    skills: ['Git', 'GitHub', 'Vitest', 'ESLint', 'Vercel', 'Claude Code'],
   },
   {
-    title: 'Engineering & AI',
+    title: 'AI & Local Inference',
     icon: 'brain',
-    description: 'How I approach problems, plus AI-assisted development.',
-    skills: [
-      'Systems troubleshooting',
-      'Data structures & algorithms',
-      'Claude Code',
-      'Ollama',
-      'Self-hosted LLM inference',
-    ],
+    description: 'Running language models on hardware I control.',
+    skills: ['Ollama', 'Self-hosted LLM inference', 'LLM tools'],
   },
 ]

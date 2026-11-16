@@ -11,6 +11,7 @@ const rank = (p: Project) => (p.primary ? 2 : p.featured ? 1 : 0)
 export default function Projects() {
   const [filter, setFilter] = useState<(typeof projectFilters)[number]>('All')
   const [selected, setSelected] = useState<Project | null>(null)
+  const [trigger, setTrigger] = useState<HTMLElement | null>(null)
 
   const visible = useMemo(() => {
     const list = filter === 'All' ? projects : projects.filter((p) => p.category === filter)
@@ -24,7 +25,7 @@ export default function Projects() {
         id="projects-title"
         label="03 / Projects"
         title="Selected work"
-        intro="Software and systems projects, each with the problem, my contribution, and the decisions behind it."
+        intro="Open any project for the problem it addresses, what I contributed, and the decisions behind it."
       />
 
       <div role="group" aria-label="Filter projects by category" className="mb-8 flex flex-wrap gap-2">
@@ -34,7 +35,7 @@ export default function Projects() {
             type="button"
             aria-pressed={filter === f}
             onClick={() => setFilter(f)}
-            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+            className={`min-h-10 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
               filter === f
                 ? 'border-accent bg-accent text-accent-fg'
                 : 'border-line text-muted hover:border-accent hover:text-fg'
@@ -55,14 +56,17 @@ export default function Projects() {
           return (
             <li key={p.id} className={wide ? 'sm:col-span-2 lg:col-span-3' : ''}>
               <Reveal delay={(i % 3) * 0.05} className="h-full">
-                <ProjectCard project={p} large={wide} onOpen={() => setSelected(p)} />
+                <ProjectCard project={p} large={wide} onOpen={(el) => {
+                    setTrigger(el)
+                    setSelected(p)
+                  }} />
               </Reveal>
             </li>
           )
         })}
       </ul>
 
-      <ProjectDialog project={selected} onClose={() => setSelected(null)} />
+      <ProjectDialog project={selected} trigger={trigger} onClose={() => setSelected(null)} />
     </section>
   )
 }

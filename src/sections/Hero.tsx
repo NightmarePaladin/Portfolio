@@ -25,15 +25,15 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="chip mb-6 !text-accent">{personal.shortTitle}</p>
-          <h1 id="hero-title" className="text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            {personal.headline[0]}
-            <span className="text-gradient mt-1 block">{personal.headline[1]}</span>
+          <h1 id="hero-title">
+            <span className="block text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              {personal.headline[0]}
+            </span>
+            <span className="text-gradient mt-3 block text-2xl font-semibold leading-snug tracking-tight sm:text-3xl lg:text-4xl">
+              {personal.headline[1]}
+            </span>
           </h1>
-          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-muted sm:text-lg">
-            {personal.heroIntro.map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </div>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">{personal.heroIntro}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="btn btn-primary">
               View Projects <ArrowRight size={16} aria-hidden />

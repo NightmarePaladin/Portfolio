@@ -35,7 +35,7 @@ export default function Experience() {
           id="experience-title"
           label="04 / Experience"
           title="Experience & education"
-          intro="Hands-on technical work, and the engineering education that formalizes it."
+          intro="Where I have worked and what I studied."
         />
         <ol className="space-y-5">
           {experience.map((e) => {

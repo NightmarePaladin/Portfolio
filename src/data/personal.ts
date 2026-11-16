@@ -21,12 +21,10 @@ export const personal = {
     downloadName: 'Jamel-Rose-Resume.pdf',
   },
 
-  headline: ["Hi, I'm Jamel.", 'I Build Software and Solve Technical Problems.'],
+  headline: ["Hi, I'm Jamel.", 'I build software and enjoy figuring out how things work.'],
 
-  heroIntro: [
-    "I'm Jamel Rose, a Computer Engineering graduate and former U.S. Air Force F-16 maintainer. My background spans aircraft maintenance, industrial technology, software development, and computer infrastructure.",
-    "I've spent my career understanding complex systems, figuring out why they fail, and finding ways to make them work better. Today, I bring that same approach to building software and solving engineering problems.",
-  ],
+  heroIntro:
+    "I'm a Computer Engineering graduate and former Air Force F-16 maintainer. I've worked with everything from aircraft and industrial equipment to computer systems and software. These days, I'm focused on building applications, exploring new technologies, and growing as an engineer.",
 
   about: [
     'My engineering background started in the U.S. Air Force, where I maintained F-16 aircraft and developed a hands-on approach to troubleshooting complex systems. That experience shaped how I think about technology: understanding how individual components work together is just as important as understanding the components themselves.',
