@@ -25,7 +25,7 @@ export default function Projects() {
         id="projects-title"
         label="03 / Projects"
         title="My projects"
-        intro="Open any project for the problem it addresses, what I contributed, and the decisions behind it."
+        intro="Click any project to see what it does, what I built, and how it works."
       />
 
       <div role="group" aria-label="Filter projects by category" className="mb-8 flex flex-wrap gap-2">
