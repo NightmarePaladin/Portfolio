@@ -9,7 +9,6 @@ public/images/projects/
   fitlog/
   scada-cooling/
   homelab-local-ai/
-  expense-tracker/
 ```
 
 Create the folder, drop real images in it, then list them in the project's `images` array:
@@ -40,6 +39,5 @@ Do not add an `images` entry until the file exists.
 | FitLog | `fitlog/` | Active workout screen; progress screen; dashboard |
 | SCADA Cooling Control | `scada-cooling/` | HMI screen; system architecture diagram; photo of the prototype |
 | Virtualized Homelab & Local AI | `homelab-local-ai/` | Proxmox overview; network or service diagram |
-| Expense Tracking App | `expense-tracker/` | Expense list; monthly summary |
 
 Everything in `public/` is published as-is by GitHub Pages, including this README (harmless; delete it if you like).
