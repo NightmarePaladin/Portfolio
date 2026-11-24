@@ -10,7 +10,6 @@ export const NAV = [
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'contact', label: 'Contact' },
 ]
 const IDS = NAV.map((n) => n.id)
 

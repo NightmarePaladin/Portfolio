@@ -14,7 +14,7 @@ export default function Hero() {
         style={{ background: 'radial-gradient(closest-side, var(--glow), transparent)' }}
       />
       <div className="mx-auto max-w-6xl px-5">
-        <div className="max-w-3xl">
+        <div>
           <p className="chip mb-6 !text-accent">{personal.shortTitle}</p>
           <h1 id="hero-title">
             <span className="block text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
@@ -24,7 +24,7 @@ export default function Hero() {
               {personal.headline[1]}
             </span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">{personal.heroIntro}</p>
+          <p className="mt-6 max-w-4xl text-base leading-relaxed text-muted sm:text-lg">{personal.heroIntro}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="btn btn-primary">
               View Projects <ArrowRight size={16} aria-hidden />

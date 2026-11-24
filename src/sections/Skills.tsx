@@ -32,7 +32,6 @@ export default function Skills() {
                     <Icon size={20} aria-hidden />
                   </span>
                   <h3 className="break-words text-lg font-semibold">{c.title}</h3>
-                  <p className="mt-1 text-sm text-muted">{c.description}</p>
                   <ul className="mt-4 flex flex-wrap content-start gap-1.5">
                     {c.skills.map((s) => (
                       <li key={s} className="chip">
