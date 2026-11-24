@@ -27,6 +27,11 @@ export const projects: Project[] = [
     primary: true,
     featured: true,
     technologies: ['Next.js', 'TypeScript', 'React', 'Supabase', 'PostgreSQL', 'PDF.js', 'Tailwind', 'Vitest', 'Playwright'],
+    images: [
+      { src: 'images/projects/schematichub/schematics-viewer-dashboard.jpg', alt: 'SchematicHub dashboard with machine, schematic, and open-issue counts' },
+      { src: 'images/projects/schematichub/schematics-viewer-machines.jpg', alt: 'SchematicHub machine list with category, manufacturer, and status' },
+      { src: 'images/projects/schematichub/schematics-viewer-schematics.jpg', alt: 'SchematicHub list of uploaded schematics with revision and machine' },
+    ],
     githubUrl: 'https://github.com/NightmarePaladin/Schematics-Viewer',
     liveUrl: 'https://schematics-viewer.vercel.app',
     // The repository README maps the project to a boot camp requirements list.
@@ -62,6 +67,10 @@ export const projects: Project[] = [
     category: 'Software',
     featured: true,
     technologies: ['TypeScript', 'Next.js', 'React', 'PostgreSQL', 'Supabase', 'Vitest', 'Python'],
+    images: [
+      { src: 'images/projects/homelab-dashboard/llm-manager-dashboard.jpg', alt: 'Homelab dashboard with server counts and an inventory table' },
+      { src: 'images/projects/homelab-dashboard/llm-manager-server-detail.jpg', alt: 'Homelab server detail page with latest CPU, RAM, disk, and GPU readings' },
+    ],
     githubUrl: 'https://github.com/NightmarePaladin/LLM-Manager',
     liveUrl: 'https://llm-manager-eosin.vercel.app',
     motivation: 'Built as a class project, combining my homelab with a full-stack application.',
@@ -136,6 +145,11 @@ export const projects: Project[] = [
     category: 'Software',
     featured: false,
     technologies: ['React Native', 'Expo', 'TypeScript', 'Supabase', 'PostgreSQL'],
+    images: [
+      { src: 'images/projects/fitlog/fit-log-dashboard.jpg', alt: 'FitLog dashboard with weekly totals, personal records, and strength progress' },
+      { src: 'images/projects/fitlog/fit-log-history.jpg', alt: 'FitLog workout history grouped by day' },
+      { src: 'images/projects/fitlog/fit-log-progress.jpg', alt: 'FitLog progress page with weekly volume chart and personal records' },
+    ],
     githubUrl: 'https://github.com/NightmarePaladin/fit-log',
     liveUrl: 'https://fit-log-beryl-mu.vercel.app',
     motivation: 'TODO: why you built FitLog (for example, your own training and poor gym signal).',
@@ -164,6 +178,9 @@ export const projects: Project[] = [
     category: 'Web',
     featured: false,
     technologies: ['Next.js', 'React', 'PostgreSQL', 'Supabase'],
+    images: [
+      { src: 'images/projects/expense-tracker/finance-machine.png', alt: 'Expense Tracker landing page listing its main features' },
+    ],
     liveUrl: 'https://finance-machine-five.vercel.app',
     motivation: 'TODO: why you built the expense tracker.',
     caseStudy: {
@@ -174,6 +191,74 @@ export const projects: Project[] = [
       challenges: ['TODO: add a technical challenge you solved on this project.'],
       decisions: ['TODO: add a design decision and why (for example how sharing permissions work).'],
       outcome: 'Deployed on Vercel. The source repository is private.',
+    },
+  },
+  {
+    id: 'clientflow',
+    title: 'ClientFlow',
+    summary:
+      'An AI-assisted back-office app for service businesses: clients, session scheduling, invoices and payment tracking, and a business dashboard.',
+    category: 'Software',
+    featured: false,
+    technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind', 'Supabase', 'PostgreSQL', 'Gemini API', 'Vitest'],
+    images: [
+      { src: 'images/projects/clientflow/clientflow-dashboard.jpg', alt: 'ClientFlow dashboard with active clients, upcoming sessions, and outstanding balance' },
+      { src: 'images/projects/clientflow/clientflow-clients.jpg', alt: 'ClientFlow client list with session balances and a low-balance badge' },
+      { src: 'images/projects/clientflow/clientflow-invoices.jpg', alt: 'ClientFlow invoice list with overdue and partially paid statuses' },
+    ],
+    motivation: 'TODO: why you built ClientFlow.',
+    caseStudy: {
+      problem: 'Small service businesses such as trainers and tutors need one place for clients, sessions, and money owed.',
+      solution:
+        'Clients with session balances, scheduling, invoices with partial and full payments, AI-drafted session summaries and payment reminders, and a dashboard of real metrics.',
+      contribution: 'TODO: describe your part, for example the schema, the AI drafting flow, or the invoice rules.',
+      architecture:
+        'Next.js App Router with Supabase Postgres, Auth, and row-level security. Money is stored as integer cents. The Gemini API drafts text that you review before it is used.',
+      challenges: ['TODO: add a technical challenge you solved on this project.'],
+      decisions: ['Kept AI output as editable drafts that need approval, and filled exact amounts and dates in from the database.'],
+      outcome: 'Deployed on Vercel as a demo that uses fictional data only.',
+    },
+  },
+  {
+    id: 'coastline-kayak',
+    title: 'Coastline Kayak',
+    summary: 'A responsive marketing website for a guided sea kayak tour company, with tours, safety information, and a contact page.',
+    category: 'Web',
+    featured: false,
+    technologies: ['TypeScript', 'HTML', 'CSS'],
+    images: [
+      { src: 'images/projects/coastline-kayak/coastline-kayak.jpg', alt: 'Coastline Kayak home page with a hero photo of two kayakers on the water' },
+    ],
+    motivation: 'TODO: why you built this site.',
+    caseStudy: {
+      problem: 'TODO: what the site needed to do for the business.',
+      solution: 'A site with Home, Tours, About, Safety & FAQ, and Contact pages, and a light and dark theme toggle.',
+      contribution: 'TODO: describe your part.',
+      architecture: 'TODO: add the framework and structure.',
+      challenges: ['TODO: add a technical challenge you solved on this project.'],
+      decisions: ['TODO: add a design decision and why.'],
+      outcome: 'Deployed on Vercel.',
+    },
+  },
+  {
+    id: 'streamline-studio',
+    title: 'Streamline Studio',
+    summary: 'A design tool for choosing a style preset, adjusting colors, type, buttons, and spacing, previewing the result, and exporting design tokens.',
+    category: 'Web',
+    featured: false,
+    technologies: ['TypeScript', 'HTML', 'CSS'],
+    images: [
+      { src: 'images/projects/streamline-studio/streamline-studio.jpg', alt: 'Streamline Studio with a preset list and a live preview of a video watch page' },
+    ],
+    motivation: 'TODO: why you built Streamline Studio.',
+    caseStudy: {
+      problem: 'TODO: what problem the tool solves.',
+      solution: 'Presets and controls for brand, buttons, type, color, and spacing, with desktop, tablet, and mobile previews and a design token export.',
+      contribution: 'TODO: describe your part.',
+      architecture: 'TODO: add the framework and structure.',
+      challenges: ['TODO: add a technical challenge you solved on this project.'],
+      decisions: ['TODO: add a design decision and why.'],
+      outcome: 'Deployed on Vercel.',
     },
   },
 ]
