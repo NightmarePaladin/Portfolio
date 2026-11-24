@@ -1,5 +1,6 @@
 import { ArrowUp } from 'lucide-react'
 import { personal } from '../data/personal'
+import CopyEmail from './CopyEmail'
 import SocialLinks from './SocialLinks'
 
 export default function Footer() {
@@ -9,7 +10,10 @@ export default function Footer() {
         <p className="text-sm text-muted">
           © {new Date().getFullYear()} {personal.name}. All rights reserved.
         </p>
-        <SocialLinks />
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <CopyEmail />
+          <SocialLinks />
+        </div>
         <a href="#home" className="flex items-center gap-1.5 text-sm text-muted hover:text-accent">
           Back to top <ArrowUp size={14} aria-hidden />
         </a>

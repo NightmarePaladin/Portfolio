@@ -115,8 +115,6 @@ export default function ProjectCard({
         <h3 className={`break-words font-semibold tracking-tight ${large ? 'text-2xl' : 'text-lg'}`}>
           {project.title}
         </h3>
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{project.summary}</p>
-
         <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Main technologies">
           {project.technologies.slice(0, shown).map((t) => (
             <li key={t} className="chip">

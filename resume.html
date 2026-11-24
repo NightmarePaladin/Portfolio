@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Jamel Rose</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        document.documentElement.dataset.theme = t === 'light' ? 'light' : 'dark';
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    </script>
+    <style>
+      :root[data-theme='dark'] {
+        --bg: #0b1020; --surface: #111832; --line: rgba(148, 163, 184, 0.18);
+        --fg: #e8edf7; --muted: #9aa8bf; --accent: #22d3ee; --accent-fg: #04121a;
+      }
+      :root[data-theme='light'] {
+        --bg: #f6f8fc; --surface: #ffffff; --line: #d9e0ec;
+        --fg: #0f172a; --muted: #475569; --accent: #0e7490; --accent-fg: #ffffff;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: flex; flex-direction: column;
+        background: var(--bg); color: var(--fg);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      }
+      header {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+        padding: 10px 20px; border-bottom: 1px solid var(--line); background: var(--surface);
+      }
+      .title { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+      h1 { margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+      a.back { color: var(--muted); font-size: 0.875rem; text-decoration: none; }
+      a.back:hover { color: var(--accent); }
+      a.download {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: var(--accent); color: var(--accent-fg);
+        border-radius: 10px; padding: 10px 16px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      }
+      a.download:hover { filter: brightness(1.08); }
+      a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      main { flex: 1; min-height: 0; }
+      object { display: block; width: 100%; height: 100%; border: 0; }
+      .fallback { max-width: 32rem; margin: 15vh auto 0; padding: 0 20px; text-align: center; color: var(--muted); line-height: 1.6; }
+      .fallback a { color: var(--accent); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h1>Jamel Rose &middot; Resume</h1>
+        <a class="back" href="./">&larr; Back to portfolio</a>
+      </div>
+      <a class="download" href="./resume.pdf" download="Jamel-Rose-Resume.pdf">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+    </header>
+    <main>
+      <object data="./resume.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" type="application/pdf" aria-label="Resume PDF">
+        <p class="fallback">
+          Your browser can't show the PDF here.
+          <a href="./resume.pdf">Open the resume</a> or use the Download PDF button above.
+        </p>
+      </object>
+    </main>
+  </body>
+</html>

@@ -1,7 +1,8 @@
-import { Download } from 'lucide-react'
+import { FileText } from 'lucide-react'
 import { personal } from '../data/personal'
 
-const href = `${import.meta.env.BASE_URL}${personal.resume.path}`
+// The viewer page (resume.html) shows the PDF in the browser and has the download button.
+const href = `${import.meta.env.BASE_URL}resume.html`
 
 export default function ResumeButton({
   variant = 'primary',
@@ -19,13 +20,14 @@ export default function ResumeButton({
         title="Resume coming soon"
         className={cls}
       >
-        <Download size={16} aria-hidden /> Resume (coming soon)
+        <FileText size={16} aria-hidden /> Resume (coming soon)
       </span>
     )
   }
   return (
-    <a href={href} download={personal.resume.downloadName} className={cls}>
-      <Download size={16} aria-hidden /> Download Resume
+    <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <FileText size={16} aria-hidden /> View Resume
+      <span className="sr-only"> (opens in a new tab)</span>
     </a>
   )
 }

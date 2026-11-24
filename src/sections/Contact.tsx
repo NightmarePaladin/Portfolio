@@ -1,5 +1,6 @@
 import { Mail, MapPin } from 'lucide-react'
 import { isConfigured, personal } from '../data/personal'
+import CopyEmail from '../components/CopyEmail'
 import ResumeButton from '../components/ResumeButton'
 import SocialLinks from '../components/SocialLinks'
 import Reveal from '../components/Reveal'
@@ -28,15 +29,13 @@ export default function Contact() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               {hasEmail ? (
-                <a href={`mailto:${personal.email}`} className="btn btn-primary">
-                  <Mail size={16} aria-hidden /> {personal.email}
-                </a>
+                <CopyEmail />
               ) : (
-                <span className="btn btn-primary" role="link" aria-disabled="true" title="Email coming soon">
+                <span className="btn btn-ghost" role="link" aria-disabled="true" title="Email coming soon">
                   <Mail size={16} aria-hidden /> Email coming soon
                 </span>
               )}
-              <ResumeButton variant="ghost" />
+              <ResumeButton variant="primary" />
             </div>
             <SocialLinks className="mt-6 justify-center" />
           </div>
